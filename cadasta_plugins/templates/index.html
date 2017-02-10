@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadasta Plugin</title>
+</head>
+<body>
+Plugins :
+<ul>
+{% for plugin in plugins %}
+    <li>
+        <a href="{{plugin.file.url}}" download="{{plugin.name}}">
+            {{ plugin.name }} -
+            {{ plugin.version }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+</body>
+</html>
