@@ -92,4 +92,3 @@ ENV/
 db.sqlite3
 
 media
-static

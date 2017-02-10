@@ -1,0 +1,13 @@
+/* Show it's not fixed to the top */
+body {
+  min-height: 75rem;
+}
+
+.lead {
+    font-size: 12pt;
+}
+
+.jumbotron {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
