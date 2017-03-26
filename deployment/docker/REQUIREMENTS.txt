@@ -1,0 +1,6 @@
+psycopg2
+Django>=1.8,<1.9
+django-crispy-forms==1.4.0
+django-braces==1.9.0
+django-model-utils==1.4.0
+requests==1.2.3
