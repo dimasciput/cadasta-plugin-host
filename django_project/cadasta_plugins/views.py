@@ -13,5 +13,9 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def repository(request):
-    return HttpResponse(open(absolute_path('cadasta_plugins', 'static/plugins.xml')).xreadlines())
+def plugin(request):
+    xml_data = open(absolute_path('cadasta_plugins', 'static/plugins.xml'), "rb").read()
+    return HttpResponse(
+        xml_data,
+        content_type='application/xml'
+    )
