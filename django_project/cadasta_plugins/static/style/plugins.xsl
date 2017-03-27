@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Qgis Plugins - Official 1.0 Repository</title>
+<title>Kartoza Plugins</title>
 <!--link href="xsl.css" rel="stylesheet" type="text/css" /-->
 
 <style>
@@ -77,7 +77,7 @@ td.menu_panel {
 
 </head>
 <body>
-<h2>Quantum GIS Python Plugins</h2>
+<h2>Kartoza QGIS Plugins</h2>
 <table>
 <tr>
 
