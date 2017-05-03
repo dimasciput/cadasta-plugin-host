@@ -6,9 +6,31 @@ from django.db import models
 class Plugin(models.Model):
 
     name = models.CharField(
-            max_length=200,
-            null=True,
-            blank=True)
+        max_length=200,
+        null=False,
+        blank=False
+    )
+
+    homepage = models.URLField(
+        max_length=200,
+        null=True,
+        blank=True
+    )
+
+    create_date = models.DateField(
+        null=False,
+        blank=False
+    )
+
+    description = models.TextField(
+        null=True,
+        blank=True
+    )
+
+    about = models.TextField(
+        null=True,
+        blank=True
+    )
 
     # noinspection PyClassicStyleClass
     class Meta:

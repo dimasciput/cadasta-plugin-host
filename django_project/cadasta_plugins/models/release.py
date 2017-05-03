@@ -9,8 +9,8 @@ class Release(models.Model):
 
     version = models.CharField(
             max_length=20,
-            null=True,
-            blank=True)
+            null=False,
+            blank=False)
 
     date = models.DateField(
             null=False,
@@ -18,5 +18,30 @@ class Release(models.Model):
 
     file = models.FileField(
             upload_to='plugins/')
+
+    experimental = models.BooleanField(
+            default=False
+    )
+
+    deprecated = models.BooleanField(
+            default=False
+    )
+
+    repository = models.URLField(
+            null=True,
+            blank=True
+    )
+
+    qgis_minimum_version = models.CharField(
+            max_length=10,
+            null=False,
+            blank=False
+    )
+
+    qgis_maximum_version = models.CharField(
+            max_length=10,
+            null=False,
+            blank=False
+    )
 
     plugin = models.ForeignKey(Plugin)
