@@ -2,13 +2,15 @@ import os
 from django.template import loader
 from django.http import HttpResponse
 from .models.plugin import Plugin
+from .models.release import Release
 from core.settings.utils import absolute_path
 
 
 def index(request):
     template = loader.get_template('index.html')
     context = {
-        'plugins': Plugin.objects.all()
+        'plugins': Plugin.objects.all(),
+        'releases': Release.objects.all()
     }
     return HttpResponse(template.render(context, request))
 

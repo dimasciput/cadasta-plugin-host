@@ -39,8 +39,13 @@
         {% for plugin in plugins %}
           <div class="jumbotron">
             <h2>{{ plugin.name }}</h2>
-            <p class="lead">Version : {{ plugin.version }} ( {{ plugin.date }} )</p>
-            <a class="btn btn-primary download-plugin" href="{{ plugin.file.url }}" role="button">Download</a>
+              {% for release in releases %}
+                  {% if release.plugin == plugin %}
+                      <a class="download-plugin" href="{{ release.file.url }}">
+                        <p class="lead">Version : {{ release.version }} ( {{ release.date }} )</p>
+                      </a>
+                  {% endif %}
+              {% endfor %}
           </div>
         {% endfor %}
     </div>
