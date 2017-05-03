@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from tag import Tag
 
 
 class Plugin(models.Model):
@@ -12,6 +13,12 @@ class Plugin(models.Model):
     )
 
     homepage = models.URLField(
+        max_length=200,
+        null=True,
+        blank=True
+    )
+
+    tracker = models.URLField(
         max_length=200,
         null=True,
         blank=True
@@ -31,6 +38,8 @@ class Plugin(models.Model):
         null=True,
         blank=True
     )
+
+    tags = models.ManyToManyField(Tag)
 
     # noinspection PyClassicStyleClass
     class Meta:

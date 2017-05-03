@@ -1,22 +1,26 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="/static/style/plugins.xsl" ?>
+
 <plugins>
-    <pyqgis_plugin name="Cadasta Plugin" version="1.0.0" plugin_id="35162">
-        <description><![CDATA[QGIS plugin to create, edit, upload and download Cadasta projects]]></description>
-        <about></about>
-        <version>1.1.0.beta</version>
-        <qgis_minimum_version>2.14</qgis_minimum_version>
-        <qgis_maximum_version>2.18</qgis_maximum_version>
-        <homepage><![CDATA[http://github.com/kartoza/cadasta-qgis-plugin]]></homepage>
-        <file_name>cadasta-qgis-plugin.1.1.0.beta.zip</file_name>
-        <icon>/static/packages/survey.png</icon>
-        <author_name><![CDATA[Kartoza]]></author_name>
-        <download_url>http://0.0.0.0:64450/media/plugins/cadasta-qgis-plugin-1.1.0.zip</download_url>
-        <uploaded_by><![CDATA[dimasciput]]></uploaded_by>
-        <create_date>2014-06-18T09:43:57.251757</create_date>
-        <update_date>2014-06-18T09:43:57.251757</update_date>
-        <experimental>True</experimental>
-        <deprecated>False</deprecated>
-        <repository><![CDATA[http://github.com/kartoza/cadasta-qgis-plugin]]></repository>
-        <tags><![CDATA[line boundary,delimitiation,equidistance]]></tags>
-    </pyqgis_plugin>
+    {% for release in releases %}
+        <pyqgis_plugin name="{{ release.plugin.name }}" version="{{ release.version }}">
+            <description>{{ release.plugin.description }}</description>
+            <about>{{ release.plugin.about }}</about>
+            <version>{{ release.version }}</version>
+            <trusted>True</trusted>
+            <qgis_minimum_version>{{ release.qgis_minimum_version }}</qgis_minimum_version>
+            <qgis_maximum_version>{{ release.qgis_maximum_version }}</qgis_maximum_version>
+            <homepage><![CDATA[{{ release.plugin.homepage }}]]></homepage>
+            <file_name>{{ release.filename }}</file_name>
+            <author_name><![CDATA[Kartoza]]></author_name>
+            <download_url><![CDATA[{{ release.file.url }}]]></download_url>
+            <create_date>{{ release.plugin.create_date }}</create_date>
+            <update_date>{{ release.date }}</update_date>
+            <experimental>{{ release.experimental }}</experimental>
+            <deprecated>{{ release.deprecated }}</deprecated>
+            <repository><![CDATA[{{ release.repository }}]]></repository>
+            <tracker><![CDATA[{{ release.plugin.tracker }}]]></tracker>
+            <tags><![CDATA[{{ release.plugin.tags.all|join:", " }}]]></tags>
+        </pyqgis_plugin>
+    {% endfor %}
 </plugins>

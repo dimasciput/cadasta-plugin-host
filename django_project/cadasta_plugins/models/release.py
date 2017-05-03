@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+import os
 from django.db import models
 
 from cadasta_plugins.models.plugin import Plugin
@@ -45,3 +46,6 @@ class Release(models.Model):
     )
 
     plugin = models.ForeignKey(Plugin)
+
+    def filename(self):
+        return os.path.basename(self.file.name)

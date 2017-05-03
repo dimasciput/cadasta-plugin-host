@@ -16,8 +16,19 @@ def index(request):
 
 
 def plugin(request):
-    xml_data = open(absolute_path('cadasta_plugins', 'static/plugins.xml'), "rb").read()
+    template = loader.get_template('plugins.xml')
+    releases = []
+
+    plugins = Plugin.objects.all()
+
+    for plug in plugins:
+        release = Release.objects.filter(plugin=plug).order_by('-date')[0]
+        releases.append(release)
+
+    context = {
+        'releases': releases
+    }
     return HttpResponse(
-        xml_data,
+        template.render(context, request),
         content_type='application/xml'
     )
