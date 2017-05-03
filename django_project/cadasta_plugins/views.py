@@ -1,7 +1,7 @@
 import os
 from django.template import loader
 from django.http import HttpResponse
-from .models.plugins import Plugin
+from .models.plugin import Plugin
 from core.settings.utils import absolute_path
 
 

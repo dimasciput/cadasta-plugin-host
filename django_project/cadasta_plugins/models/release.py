@@ -2,13 +2,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from cadasta_plugins.models.plugin import Plugin
 
-class Plugin(models.Model):
 
-    name = models.CharField(
-            max_length=200,
-            null=True,
-            blank=True)
+class Release(models.Model):
 
     version = models.CharField(
             max_length=20,
@@ -21,3 +18,5 @@ class Plugin(models.Model):
 
     file = models.FileField(
             upload_to='plugins/')
+
+    plugin = models.ForeignKey(Plugin)
