@@ -7,7 +7,7 @@ from core.settings.utils import absolute_path
 
 
 def index(request):
-    template = loader.get_template('index.html')
+    template = loader.get_template('plugin_index.html')
     context = {
         'plugins': Plugin.objects.all(),
         'releases': Release.objects.all()

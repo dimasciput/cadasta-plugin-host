@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'list/^$', views.index, name='index'),
-    url(r'qgis_plugin/$', views.plugin, name='plugin'),
+    url(r'list/^$', views.index, name='plugin_index'),
+    url(r'qgis_plugin/$', views.plugin, name='plugin_list'),
 ]
 
 if settings.DEBUG:
