@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cadasta_plugins', '0006_plugin_tracker'),
+        ('plugins', '0006_plugin_tracker'),
     ]
 
     operations = [
@@ -22,6 +22,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='plugin',
             name='tags',
-            field=models.ManyToManyField(to='cadasta_plugins.Tag'),
+            field=models.ManyToManyField(to='plugins.Tag'),
         ),
     ]

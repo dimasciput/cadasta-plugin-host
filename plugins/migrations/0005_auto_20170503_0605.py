@@ -9,7 +9,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cadasta_plugins', '0004_auto_20170503_0451'),
+        ('plugins', '0004_auto_20170503_0451'),
     ]
 
     operations = [

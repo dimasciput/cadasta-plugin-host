@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cadasta_plugins', '0005_auto_20170503_0605'),
+        ('plugins', '0005_auto_20170503_0605'),
     ]
 
     operations = [

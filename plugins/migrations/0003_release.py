@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cadasta_plugins', '0002_auto_20170502_1559'),
+        ('plugins', '0002_auto_20170502_1559'),
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('version', models.CharField(max_length=20, null=True, blank=True)),
                 ('date', models.DateField()),
                 ('file', models.FileField(upload_to='plugins/')),
-                ('plugin', models.ForeignKey(to='cadasta_plugins.Plugin')),
+                ('plugin', models.ForeignKey(to='plugins.Plugin')),
             ],
         ),
     ]
