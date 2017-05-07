@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'list/$', views.index, name='plugin_index'),
-    url(r'qgis_plugin/$', views.plugin, name='plugin_list'),
+    url(r'qgis_plugin/$', views.plugin, name='qgis_plugin'),
 ]
 
 if settings.DEBUG:
