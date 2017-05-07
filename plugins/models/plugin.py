@@ -43,8 +43,8 @@ class Plugin(models.Model):
 
     # noinspection PyClassicStyleClass
     class Meta:
-        app_label = 'cadasta_plugins'
+        app_label = 'plugins'
         ordering = ['name']
 
     def __str__(self):
-        return '%s' % (self.name)
+        return '%s' % self.name

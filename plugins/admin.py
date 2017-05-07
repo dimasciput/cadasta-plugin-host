@@ -1,7 +1,7 @@
 from django.contrib import admin
-from cadasta_plugins.models.plugin import Plugin
-from cadasta_plugins.models.release import Release
-from cadasta_plugins.models.tag import Tag
+from plugins.models.plugin import Plugin
+from plugins.models.release import Release
+from plugins.models.tag import Tag
 
 
 # Register your models here.
