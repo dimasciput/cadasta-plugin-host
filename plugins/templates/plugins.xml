@@ -14,7 +14,7 @@
             <file_name>{{ release.filename }}</file_name>
             <icon>/static/logo.png</icon>
             <author_name><![CDATA[Kartoza]]></author_name>
-            <download_url><![CDATA[{{ release.file.url }}]]></download_url>
+            <download_url>http://kartoza.com{{ release.file.url }}></download_url>
             <uploaded_by><![CDATA[Kartoza]]></uploaded_by>
             <create_date>{{ release.plugin.create_date }}</create_date>
             <update_date>{{ release.date }}</update_date>
