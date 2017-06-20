@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models.plugin import Plugin
 from .models.release import Release
 from core.settings.utils import absolute_path
+from django.conf import settings
 
 
 def index(request):
@@ -25,8 +26,16 @@ def plugin(request):
         release = Release.objects.filter(plugin=plug).order_by('-date')[0]
         releases.append(release)
 
+    host_name = ''
+
+    try:
+        host_name = settings.PLUGINS_HOST
+    except AttributeError:
+        pass
+
     context = {
-        'releases': releases
+        'releases': releases,
+        'host_name': host_name
     }
     return HttpResponse(
         template.render(context, request),
